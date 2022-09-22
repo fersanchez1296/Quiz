@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Quiz</string>
+    <string name="question_autor">¿Stephen King es un escritor?</string>
+    <string name="question_it">¿It fue adaptado al cine?</string>
+    <string name="question_torre">¿La torre oscura cuenta con mas de 10 volumenes?</string>
+    <string name="question_cementerio">¿Cementerio de animales tiene solo una pelicula?</string>
+    <string name="question_cupula">¿La cupula tiene una serie?</string>
+    <string name="true_button">True</string>
+    <string name="false_button">False</string>
+    <string name="correct_text">Correcto!</string>
+    <string name="incorrect_text">Incorrecto!</string>
+    <string name="next_button">Next</string>
+    <string name="prev_button">Prev</string>
+</resources>
