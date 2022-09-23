@@ -11,4 +11,8 @@
     <string name="incorrect_text">Incorrecto!</string>
     <string name="next_button">Next</string>
     <string name="prev_button">Prev</string>
+    <string name="warning_text">¿Estás seguro de hacer esto?</string>
+    <string name="show_answer_button">Ver respuesta</string>
+    <string name="cheat_button">Cheat!</string>
+    <string name="judgment_text">Cheating is wrong.</string>
 </resources>

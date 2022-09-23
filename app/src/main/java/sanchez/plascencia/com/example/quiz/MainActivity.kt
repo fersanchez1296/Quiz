@@ -1,12 +1,15 @@
 package sanchez.plascencia.com.example.quiz
 
 import android.content.ContentValues.TAG
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContract
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import com.google.android.material.snackbar.Snackbar
 import sanchez.plascencia.com.example.quiz.databinding.ActivityMainBinding
@@ -17,6 +20,12 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
     private val quizViewModel: QuizViewModel by viewModels()
+
+    private val cheatLauncher = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult()
+    ){result ->
+
+    }
 
     private lateinit var trueButton: Button
     private lateinit var falseButton: Button
@@ -49,7 +58,16 @@ class MainActivity : AppCompatActivity() {
             updatePrevQuestion()
             enabled()
         }
+
+        binding.cheatButton.setOnClickListener{view: View ->
+            val answerIsTrue = quizViewModel.currentQuestionAnswer
+            val intent = CheatActivity.newIntent(this@MainActivity, answerIsTrue)
+            cheatLauncher.launch(intent)
+        }
+
+
     }
+
     private fun updateNextQuestion(){
         val questionTextResId = quizViewModel.currentQuestionText
         binding.questionTextView.setText(questionTextResId)
