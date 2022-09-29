@@ -89,17 +89,19 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun enabled(){
+     private fun enabled(){
         //questionBank[currentIndex].enabled == 1
-        /*el ciclo está basado en el parametro enabled de quetionBank, si el valor
+        /*el ciclo está basado en el parametro enabled de questionBank, si el valor
         de enabled es 1 los botones true y false se activan y si enabled
         es igual a 0 se desactivan*/
         if(quizViewModel.currentStatus == 1) {
             binding.trueButton.isEnabled = true
             binding.falseButton.isEnabled = true
+            binding.cheatButton.isEnabled = true
         }else{
             binding.trueButton.isEnabled = false
             binding.falseButton.isEnabled = false
+            binding.cheatButton.isEnabled = false
         }
         //currentIndex == 0
         if(quizViewModel.currentIndex == 0)

@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import sanchez.plascencia.com.example.quiz.databinding.ActivityCheatBinding
 
+
 private const val EXTRA_ANSWER_IS_TRUE = "com.bignerdranch.android.geoquiz.answer_is_true"
 
 class CheatActivity : AppCompatActivity() {
@@ -27,6 +28,11 @@ class CheatActivity : AppCompatActivity() {
                 else -> R.string.false_button
             }
             binding.answerTextView.setText(answerText)
+        }
+
+        binding.backButton.setOnClickListener{this
+            onBackPressed()
+
         }
     }
     companion object {
